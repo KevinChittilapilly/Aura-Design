@@ -1,0 +1,19 @@
+.outer-div-profile{
+    display: flex;
+    
+    margin: 30px;
+
+}
+.outer-div-profile .prof-img-div{
+    margin-right: 20px;
+}
+.prof-img-div .prof-img{
+    height: 600px;
+    width: 600px;
+}
+.details .detail-text{
+    font-size: 14px;
+}
+.details .title{
+    font-weight: bolder;
+}

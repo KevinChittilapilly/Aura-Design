@@ -1,0 +1,56 @@
+.outer-login-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.outer-login-page .title {
+  margin-bottom: 60px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.admin-title {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.admin-cards {
+  display: flex;
+  justify-content: center;
+}
+.proj-admin-home .title {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.upload-proj-admin {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.upload-proj-admin .add-another {
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: blue;
+}
+.upload-proj-admin .del {
+  cursor: pointer;
+}
+.upload-proj-admin .del:hover {
+  color: red;
+}
+.proj-admin-home .proj-cards {
+  margin: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 30px;
+}
+.proj-cards .add-circle-outline{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    font-size: 60px;
+    cursor: pointer;
+}

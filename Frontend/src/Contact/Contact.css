@@ -1,0 +1,37 @@
+.contact-page{
+    display: flex;
+    justify-content: center;
+}
+.contact-page .outer-contact{
+    display: flex;
+}
+.contact-page .outer-contact .contact-info{
+    margin-right: 200px;
+    margin-left: 200px;
+}
+.outer-contact .contact-info .title{
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 50px;
+}
+.outer-contact .contact-info .item-title{
+    font-weight: bold;
+    font-size: 16px;
+}
+.outer-contact .post-query{
+    margin-left: 200px;
+}
+.outer-contact .post-query .title{
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 50px;
+}
+.outer-contact .post-query .form-title{
+    font-weight: bold;
+    font-size: 16px;
+}
+.outer-contact .post-query .post-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,34 @@
+.outer-div-proj{
+  display: flex;
+  justify-content: center;
+}
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 100px;
+  column-gap: 100px;
+  
+}
+.img-style{
+    height: 300px;
+    width: 300px;
+}
+.poped-out-div{
+  height: 600px;
+  width: 600px;
+  display: none;
+  height: 401px;
+  width: 409px;
+  display: none;
+  background-color: white;
+  margin-top: -325px;
+  z-index: 10;
+  position: absolute;
+  margin-left: -40px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  animation: grow-card 1s;
+}
+@keyframes grow-card {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
