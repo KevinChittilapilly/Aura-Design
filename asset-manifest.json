@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Aura-Design/static/css/main.c723dd07.css",
+    "main.js": "/Aura-Design/static/js/main.f21c6dbf.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Aura-Design/static/js/787.28cb0dcd.chunk.js",
+    "static/media/img3.jpg": "/Aura-Design/static/media/img3.8be18c5c459f3140dbb8.jpg",
+    "static/media/img1.jpg": "/Aura-Design/static/media/img1.1e937dcac4de267af87b.jpg",
+    "static/media/img2.jpg": "/Aura-Design/static/media/img2.d05f7a72f9485a84087b.jpg",
+    "index.html": "/Aura-Design/index.html",
+    "main.c723dd07.css.map": "/Aura-Design/static/css/main.c723dd07.css.map",
+    "main.f21c6dbf.js.map": "/Aura-Design/static/js/main.f21c6dbf.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Aura-Design/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c723dd07.css",
+    "static/js/main.f21c6dbf.js"
+  ]
+}
