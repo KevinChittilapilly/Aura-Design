@@ -35,6 +35,7 @@ class App extends Component {
           ):null}
           <Route path="/contact" element={<Contact />} />
           <Route path="/" element={<Home />} />
+          <Route path="/Aura-Design" element={<Home />} />
           <Route exact path="*" element={<div>Page not found</div>} />
         </Routes>
       </Router>
