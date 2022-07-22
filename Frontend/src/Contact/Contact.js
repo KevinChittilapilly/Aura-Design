@@ -1,29 +1,44 @@
 import React, { useState } from "react";
 import { contactDetails } from "../util/utils";
 import "./Contact.css";
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+import { saveQuery } from "../util/action";
+import Toast from "../util/Toast";
 
 const Contact = () => {
   const [state, setState] = useState({
-    title: "",
-    descp: "",
-    file: "",
-    isPublished: false,
-    images: [""],
+    name: "",
+    email: "",
+    phoneNum: "",
+    query: "",
   });
-  const handleFormSubmit = (event) => {
+  const [isSavedSucess, setIsSavedSucess] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleFormSubmit = async (event) => {
     event?.preventDefault();
     event?.stopPropagation();
+    const query = { ...state };
+    try {
+      await saveQuery(query);
+      setOpen(true);
+      setIsSavedSucess(true);
+    } catch (err) {
+      console.log(err);
+      setOpen(true);
+      setIsSavedSucess(false);
+    }
   };
   return (
     <>
+      <Toast open={open} isSavedSucess={isSavedSucess} setOpen={()=>{setOpen(false)}}/>
       <div className="contact-page">
         <div className="outer-contact">
           <div className="contact-info">
             <div className="title">Contact Details</div>
             <div>
-              {contactDetails.map((item,index) => {
+              {contactDetails.map((item, index) => {
                 return (
                   <div key={index} style={{ marginBottom: "20px" }}>
                     <div className="item-title">{item.title}</div>
@@ -31,6 +46,9 @@ const Contact = () => {
                   </div>
                 );
               })}
+              <a href="mailto:ckevinvarghese1998@gmail.com?subject=Request Info">
+                Reach Out to Us
+              </a>
             </div>
           </div>
 
@@ -39,40 +57,33 @@ const Contact = () => {
             <div className="form-title">Enter Name</div>
             <input
               type={"text"}
-              style={{
-                border: "none",
-                borderBottom: "1px solid",
-                outline: "none",
-                marginBottom: "20px",
-                width:'400px'
-              }}
+              onChange={(e) => setState({ ...state, name: e.target.value })}
+              className="input-fields"
             />
             <div className="form-title">Enter Email</div>
             <input
               type={"text"}
-              style={{
-                border: "none",
-                borderBottom: "1px solid",
-                outline: "none",
-                marginBottom: "20px",
-                width:'400px'
-              }}
+              onChange={(e) => setState({ ...state, email: e.target.value })}
+              className="input-fields"
             />
             <div className="form-title">Enter Phone Number</div>
             <input
               type={"text"}
-              style={{
-                border: "none",
-                borderBottom: "1px solid",
-                outline: "none",
-                marginBottom: "20px",
-                width:'400px'
-              }}
+              onChange={(e) => setState({ ...state, phoneNum: e.target.value })}
+              className="input-fields"
             />
             <div className="form-title">Enter Query</div>
-            <input type={"text"} style={{ minHeight: "150px",width:'400px' }} />
+            <textarea
+              type={"text"}
+              className='input-textarea'
+              onChange={(e) => setState({ ...state, query: e.target.value })}
+            />
             <div className="post-btn">
-              <Button variant="contained" endIcon={<SendIcon />}>
+              <Button
+                variant="contained"
+                endIcon={<SendIcon />}
+                onClick={handleFormSubmit}
+              >
                 Post
               </Button>
             </div>

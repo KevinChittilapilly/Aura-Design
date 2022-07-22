@@ -36,6 +36,7 @@ public class ProjectController{
     public List<ProjectModal> getAllProjects() {
         return (List<ProjectModal>) projectService.findAll();
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/projects/save")
     public List<ProjectModal> saveProject(@RequestBody ProjectModal projectModal) {
         LocalDate date = LocalDate.now();
@@ -43,10 +44,12 @@ public class ProjectController{
         projectService.saveProject(projectModal);
         return (List<ProjectModal>) projectService.findAll();
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/projects/delete/{id}")
     public List<ProjectModal> deleteProject(@PathVariable("id") int id) {
         return projectService.deleteProject(id);
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/projects/edit")
     public List<ProjectModal> editProject(@RequestBody ProjectModal projectModal) {
         System.out.println("check"+ " "+projectService.findByProjectTitle(projectModal.getProjectTitle()));
@@ -54,8 +57,14 @@ public class ProjectController{
         projectService.saveProject(projectModal);
         return (List<ProjectModal>) projectService.findAll();
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("projects/{id}/images")
     public List<ProjectImageModal> getAllProjectImages(@PathVariable("id") int pid) {
         return (List<ProjectImageModal>) projectImageServiceImp.findByProjectId(pid);
+    }
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PutMapping("projects/saveImg")
+    public ProjectImageModal saveProjectImage(@RequestBody ProjectImageModal projectImageModal) {
+        return projectImageServiceImp.saveProjectImage(projectImageModal);
     }
 }

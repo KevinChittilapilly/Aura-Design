@@ -14,9 +14,9 @@ import MenuItem from "@mui/material/MenuItem";
 import img1 from "../Assets/img1.jpg";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useNavigate } from "react-router";
-import axios from 'axios';
 
 const ProjectAdminCard = (props) => {
+  const {projectData, removeProj} = props;
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -25,22 +25,19 @@ const ProjectAdminCard = (props) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  useEffect(()=>{
-    axios.get('http://localhost:8080/projects').then((resp)=>{
-    console.log(resp)
-    })
-  },[])
   const navigate = useNavigate();
+  
   if (props.addCard) {
     return (<Card sx={{ maxWidth: 345 }} style={{position:'relative'}}>
         <CardHeader
         title="Add new project"
         style={{display:'flex',justifyContent:'center'}}
       />
-        <AddCircleOutlineIcon className="add-circle-outline" onClick={()=>navigate('uploadProject')}/>
+        <AddCircleOutlineIcon className="add-circle-outline" onClick={()=>navigate('uploadProject',{state:Math.floor(Math.random() * 10000000 + 1)})}/>
 
     </Card>);
   }
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
@@ -54,8 +51,8 @@ const ProjectAdminCard = (props) => {
             <MoreVertIcon onClick={handleClick} />
           </IconButton>
         }
-        title="Project Title"
-        subheader="September 14, 2016"
+        title={projectData.projectTitle}
+        subheader={projectData.date||""}
       />
       <Menu
         anchorEl={anchorEl}
@@ -92,13 +89,13 @@ const ProjectAdminCard = (props) => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem>Edit Project</MenuItem>
-        <MenuItem>Delete Project</MenuItem>
+        <MenuItem onClick={()=>navigate('uploadProject', {state:projectData})}>Edit Project</MenuItem>
+        <MenuItem  onClick={()=>removeProj(projectData.id)}>Delete Project</MenuItem>
       </Menu>
       <CardMedia component="img" height="194" image={img1} alt="Img no found" />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Project Description
+          {projectData.descrption}
         </Typography>
       </CardContent>
     </Card>

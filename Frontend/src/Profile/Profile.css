@@ -1,11 +1,11 @@
 .outer-div-profile{
     display: flex;
     
-    margin: 30px;
+    margin: 70px;
 
 }
 .outer-div-profile .prof-img-div{
-    margin-right: 20px;
+    margin-right: 50px;
 }
 .prof-img-div .prof-img{
     height: 600px;
@@ -17,3 +17,17 @@
 .details .title{
     font-weight: bolder;
 }
+@media screen and (max-width : 768px) {
+    .outer-div-profile{
+        display: block;
+        margin:20px
+    }
+    .prof-img-div .prof-img{
+        height: 300px;
+        width: 100%;
+    }
+    .outer-div-profile .prof-img-div{
+        margin-right: 0px;
+    }
+    
+  }

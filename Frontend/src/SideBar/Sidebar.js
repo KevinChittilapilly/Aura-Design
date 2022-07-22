@@ -4,11 +4,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { menuItems } from "../util/utils";
 import { useNavigate } from "react-router-dom";
+import useMobile from "../util/useMobile";
 
 const Sidebar = (props) => {
   const [activeCurrentId, setActiveCurrentId] = useState(-1);
   const sideRef = useRef();
   const navigate = useNavigate();
+  const isMobile = useMobile();
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sideRef.current && !sideRef.current.contains(event.target)) {
@@ -28,7 +30,7 @@ const Sidebar = (props) => {
             <div key={index}>
               <div
                 className="item-title"
-                onClick={() => {setActiveCurrentId(index);navigate(`${item.title.toLowerCase()}`)}}
+                onClick={() => {setActiveCurrentId(index);navigate(`${item.title.toLowerCase()}`);isMobile && props.onClickOutside()}}
 
               >
                 {item.title}
@@ -38,7 +40,6 @@ const Sidebar = (props) => {
                   {item.category.map((cat) => {
                     return (
                       <div className="item-category">
-                        <ArrowRightIcon />
                         {cat}
                       </div>
                     );

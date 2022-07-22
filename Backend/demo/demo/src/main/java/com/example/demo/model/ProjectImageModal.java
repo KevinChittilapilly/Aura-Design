@@ -13,8 +13,33 @@ import javax.persistence.Table;
 public class ProjectImageModal {
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; 
+    @Column(name="project_id")
+    private int projectId;
+    @Column(name="file")
+    private String file;
+    @Column(name="isVideo")
+    private String isVideo;
+    @Column(name="isBannerImg")
+    private String isBannerImg;
+
+    
+    public String getIsVideo() {
+        return isVideo;
+    }
+
+    public void setIsVideo(String isVideo) {
+        this.isVideo = isVideo;
+    }
+
+    public String getIsBannerImg() {
+        return isBannerImg;
+    }
+
+    public void setIsBannerImg(String isBannerImg) {
+        this.isBannerImg = isBannerImg;
+    }
+
     public int getProjectId() {
         return projectId;
     }
@@ -22,24 +47,20 @@ public class ProjectImageModal {
     public void setProjectId(int projectId) {
         this.projectId = projectId;
     }
-
-    public String getProjectImgUrl() {
-        return projectImgUrl;
-    }
-
-    public void setProjectImgUrl(String projectImgUrl) {
-        this.projectImgUrl = projectImgUrl;
-    }
-
-    @Column(name="project_id")
-    private int projectId;
-    @Column(name="project_img_url")
-    private String projectImgUrl;
+    
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
     }
 }

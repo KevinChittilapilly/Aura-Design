@@ -22,3 +22,17 @@
     margin-left: 20px;
     cursor: pointer;
 }
+@media screen and (max-width : 768px) {
+    .outer-nav-bar{
+        height: fit-content;
+        margin-bottom: 0px;
+    }
+    .outer-nav-bar .title .span-title{
+       font-size: 25px;
+    }
+    .outer-nav-bar .menu-icon{
+        font-size: 40px;
+        margin-top: -40px;
+    }
+    
+  }

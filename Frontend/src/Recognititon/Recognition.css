@@ -1,0 +1,56 @@
+.recognition{
+    margin-left: 180px;
+    margin-right: 180px;
+}
+.recognition .cards{
+    height: 200px;
+    display: flex;
+    width: 200px;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+}
+.recognition  .poped-out-div{
+    display: none;
+    height: 350px;
+    width: 350px;
+    display: none;
+    background-color: white;
+    margin-top: -241px;
+    z-index: 10;
+    position: absolute;
+    margin-left: -100px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    animation: grow-card 0.5s;
+  }
+  @keyframes grow-card {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+  }
+  .poped-out-div .img-div{
+    position: relative;
+  }
+  .poped-out-div .desp{
+    padding: 20px;
+    font-size: 20px;
+  }
+  .poped-out-div .img-div .chevron-left{
+    position: absolute;
+    left: 0px;
+    top: 45%;
+    color: white;
+    font-size: 40px;
+  }
+  .poped-out-div .img-div .chevron-right{
+    position: absolute;
+    right: 0px;
+    top: 45%;
+    color: white;
+    font-size: 40px;
+  }
+  .poped-out-div .img-div .chevron-left:hover{
+    background-color: lightgray;
+  }
+  .poped-out-div .img-div .chevron-right:hover{
+    background-color: lightgray;
+  }

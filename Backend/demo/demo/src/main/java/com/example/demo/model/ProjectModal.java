@@ -1,23 +1,15 @@
 package com.example.demo.model;
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "projects")
 public class ProjectModal {
-    @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id
     @Column(name="project_id")
     private int id;
     @Column(name="title")
@@ -41,19 +33,16 @@ public class ProjectModal {
     @Column(name="date")
     private LocalDate date;
 
-    @OneToMany(targetEntity = ProjectImageModal.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "project_id",referencedColumnName = "project_id")
-    private List<ProjectImageModal> projectImageModals;
     public int getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
     }
-    public String getDescrption() {
+    public String getDescription() {
         return description;
     }
-    public void setDescrption(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
     public String getPublished() {

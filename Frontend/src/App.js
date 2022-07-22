@@ -10,6 +10,7 @@ import Navbar from "./NavBar/NavBar";
 import Profile from "./Profile/Profile";
 import ProjectHome from "./Project/ProjectHome";
 import history from "./util/history";
+import Recognition from "./Recognititon/Recognition";
 
 class App extends Component {
   checkIfAuth = () => {
@@ -25,7 +26,6 @@ class App extends Component {
           <Route path="/projects" element={<ProjectHome />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/admin" element={<LoginPage />} />
-          {console.log('token',this.checkIfAuth())}
           {this.checkIfAuth() ? (
             <>
             <Route path="/admin/home" element={<Admin />} />
@@ -36,6 +36,7 @@ class App extends Component {
           <Route path="/contact" element={<Contact />} />
           <Route path="/" element={<Home />} />
           <Route path="/Aura-Design" element={<Home />} />
+          <Route path="/recognition" element={<Recognition/>}/>
           <Route exact path="*" element={<div>Page not found</div>} />
         </Routes>
       </Router>

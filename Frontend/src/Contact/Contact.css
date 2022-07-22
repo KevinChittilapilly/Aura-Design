@@ -30,8 +30,55 @@
     font-weight: bold;
     font-size: 16px;
 }
+.outer-contact .post-query .input-fields{
+    border: none;
+    border-bottom: 1px solid;
+    width: 400px;
+    outline: none;
+    margin-bottom: 20px;
+}
+.outer-contact .post-query .input-textarea{
+    min-height: 150px;
+    width: 400px;
+}
 .outer-contact .post-query .post-btn{
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
+@media screen and (max-width : 768px) {
+    .contact-page{
+        display: block;
+    }
+    .contact-page .outer-contact{
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .contact-page .outer-contact .contact-info{
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .outer-contact .post-query {
+        margin-left: 20px;
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+    .outer-contact .contact-info .title{
+        margin-bottom: 20px;
+    }
+    .outer-contact .post-query .title{
+        margin-bottom: 20px;
+    }
+    .outer-contact .post-query .input-fields{
+        border: none;
+        border-bottom: 1px solid;
+        width: 100%;
+        outline: none;
+        margin-bottom: 20px;
+    }
+    .outer-contact .post-query .input-textarea{
+        min-height: 150px;
+        width: 100%;
+    }
+  }

@@ -6,4 +6,5 @@ import com.example.demo.model.ProjectImageModal;
 
 public interface ProjectImageService {
     List<ProjectImageModal> findByProjectId(int pid);
+    ProjectImageModal saveProjectImage(ProjectImageModal projectImageModal);
 }

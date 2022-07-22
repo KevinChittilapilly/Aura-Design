@@ -17,5 +17,10 @@ public class ProjectImageServiceImp implements ProjectImageService {
     public List<ProjectImageModal> findByProjectId(int pid) {
         return projectImageRepository.findByProjectId(pid);
     }
+
+    @Override
+    public ProjectImageModal saveProjectImage(ProjectImageModal projectImageModal) {
+        return projectImageRepository.save(projectImageModal);
+    }
     
 }
